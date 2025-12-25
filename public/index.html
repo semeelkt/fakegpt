@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>FakeGPT — Chat</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar">
+        <div class="brand">FakeGPT</div>
+        <button id="newChat" class="btn">+ New chat</button>
+        <div class="conversations" id="conversations"></div>
+        <div class="sidebar-footer">
+          <label>Theme
+            <select id="themeSelect">
+              <option value="dark">Dark</option>
+              <option value="light">Light</option>
+            </select>
+          </label>
+        </div>
+      </aside>
+
+      <main class="chat-area">
+        <header class="chat-header">
+          <div class="header-left">
+            <h2 id="chatTitle">Welcome to FakeGPT</h2>
+          </div>
+          <div class="header-right">
+            <label>Model
+              <select id="modelSelect">
+                <option value="gpt-3.5-turbo">gpt-3.5-turbo</option>
+                <option value="gpt-4o">gpt-4o</option>
+              </select>
+            </label>
+            <label>Temp <input id="tempRange" type="range" min="0" max="1" step="0.1" value="0.7"/></label>
+          </div>
+        </header>
+
+        <section id="messages" class="messages"></section>
+
+        <footer class="composer">
+          <textarea id="prompt" placeholder="Send a message..."></textarea>
+          <div class="composer-actions">
+            <button id="sendBtn" class="btn primary">Send</button>
+          </div>
+        </footer>
+      </main>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
